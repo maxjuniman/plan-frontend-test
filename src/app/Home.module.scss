@@ -1,36 +1,128 @@
-@use '@/styles/variables' as vars;
-
-.title {
-  color: vars.$orange_light;
-  font-size: vars.$fz_xl;
-  font-weight: 600;
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url('/img/fundo.png') no-repeat center center;
+  background-size: cover;
 }
 
-.content {
+.main {
+  flex: 1;
+  padding: 0 2rem 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
   width: 100%;
-  height: 100vh;
+  margin-top: 50px;
+}
+
+.countriesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.loadingContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+  padding: 4rem 1.5rem;
+  color: white;
 
-  .text {
-    color: vars.$orange_dark;
-    font-size: vars.$fz_xl;
-    font-weight: 700;
+  p {
+    font-size: 1rem;
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  color: white;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
 
-  .button {
-    background: vars.$orange_dark;
-    color: white;
-    font-size: vars.$fz_df;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 7px 20px;
-    border-radius: 8px;
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-    &:hover {
-      filter: brightness(1.2);
-    }
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.errorText {
+  color: white;
+  font-size: 1.25rem;
+}
+
+.retryButton {
+  background-color: white;
+  color: #f97316;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #f3f4f6;
+  }
+
+  &:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .countriesGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 0 1rem 1rem;
+  }
+
+  .countriesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .countriesGrid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

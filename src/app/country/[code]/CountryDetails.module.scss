@@ -1,0 +1,269 @@
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url('/img/fundo.png') no-repeat center center;
+  background-size: cover;
+}
+
+.header {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem 2rem 2rem;
+}
+
+.countryCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 90%;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 47px;
+  padding: 0 12px;
+  background-color: #585958;
+}
+
+.headerFlag {
+  object-fit: contain;
+  width: 40px;
+  height: 40px;
+}
+
+.regionLabel {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.cardBody {
+  position: relative;
+  padding: 2rem;
+  min-height: 280px;
+}
+
+.flagSection {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 290px;
+}
+
+.flag {
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 290px;
+  height: 220px;
+}
+
+.flagLabel {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #999;
+  font-style: italic;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.countryName {
+  font-size: 3.125rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #707070;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.detailsList {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.labelsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-end;
+}
+
+.valuesColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-start;
+}
+
+.label {
+  color: #707070;
+  font-weight: 400;
+  font-size: 23px;
+  white-space: nowrap;
+  text-align: right;
+
+  &::after {
+    content: ':';
+  }
+}
+
+.value {
+  color: #707070;
+  font-weight: 700;
+  font-size: 23px;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem 2rem;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 2.5rem;
+  background-color: #f97316;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  width: 270px;
+  height: 47px;
+
+  &:hover {
+    background-color: #ea580c;
+  }
+
+  &:focus {
+    outline: 2px solid #f97316;
+    outline-offset: 2px;
+  }
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem 1.5rem;
+  color: white;
+  width: 100%;
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  color: white;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.errorText {
+  color: white;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .main {
+    padding: 0 1rem 1rem;
+  }
+
+  .cardBody {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .flag {
+    width: 290px;
+    height: 220px;
+  }
+
+  .countryName {
+    font-size: 1.25rem;
+  }
+
+  .detailRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .label {
+    text-align: center;
+    min-width: unset;
+  }
+
+  .value {
+    min-width: unset;
+    text-align: center;
+  }
+
+  .cardFooter {
+    padding: 0 1.5rem 1.5rem;
+  }
+}
