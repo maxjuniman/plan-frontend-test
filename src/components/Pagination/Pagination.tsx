@@ -1,13 +1,15 @@
 'use client'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import React from 'react'
 import { Button } from 'react-aria-components'
+
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 import styles from './Pagination.module.scss'
 
 interface PaginationProps {
   currentPage: number
   totalPages: number
-  onPageChange: (page: number) => void
+  onPageChange: (page: number) => void // eslint-disable-line no-unused-vars
 }
 
 export function Pagination({

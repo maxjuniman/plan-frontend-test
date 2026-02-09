@@ -1,4 +1,6 @@
 'use client'
+import React from 'react'
+
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -10,35 +12,26 @@ interface CountryCardProps {
   country: Country
 }
 
-const REGION_ICONS: Record<string, string> = {
-  Africa: '🌍',
-  Americas: '🌎',
-  Asia: '🌏',
-  Europe: '🌍',
-  Oceania: '🌏',
-  Antarctic: '🌐',
-}
-
 export function CountryCard({ country }: CountryCardProps) {
   const name = country.translations?.por?.common || country.name.common
   const region = getRegionInPortuguese(country.region)
   const capital = country.capital?.[0] || 'N/A'
 
   const getFlag = (regionName: string) => {
-    if (regionName === "Ásia") {
-      return "/img/mapas/asia.png"
+    if (regionName === 'Ásia') {
+      return '/img/mapas/asia.png'
     }
-    if (regionName === "África") {
-      return "/img/mapas/africa.png"
+    if (regionName === 'África') {
+      return '/img/mapas/africa.png'
     }
-    if (regionName === "Europa") {
-      return "/img/mapas/europa.png"
+    if (regionName === 'Europa') {
+      return '/img/mapas/europa.png'
     }
-    if (regionName === "Américas") {
-      return "/img/mapas/norte.png"
+    if (regionName === 'Américas') {
+      return '/img/mapas/norte.png'
     }
-    if (regionName === "Oceania") {
-      return "/img/mapas/oceania.png"
+    if (regionName === 'Oceania') {
+      return '/img/mapas/oceania.png'
     }
     return `/img/mapas/${regionName.toLowerCase()}.png`
   }
@@ -72,7 +65,7 @@ export function CountryCard({ country }: CountryCardProps) {
         <div className={styles.capitalRow}>
           <span className={styles.locationIcon}>
             <Image
-              src={"/img/capital.png"}
+              src='/img/capital.png'
               alt={`Capital de ${name}`}
               width={20}
               height={20}

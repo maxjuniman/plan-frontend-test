@@ -1,7 +1,5 @@
 'use client'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import {
   Checkbox,
   CheckboxGroup,
@@ -10,16 +8,19 @@ import {
   SearchField,
 } from 'react-aria-components'
 
+import Image from 'next/image'
+import Link from 'next/link'
+
 import styles from './Header.module.scss'
 
 interface HeaderProps {
   searchValue: string
-  onSearchChange: (value: string) => void
+  onSearchChange: (value: string) => void // eslint-disable-line no-unused-vars
   selectedContinents: string[]
-  onContinentChange: (continents: string[]) => void
+  onContinentChange: (continents: string[]) => void // eslint-disable-line no-unused-vars
   languages: { code: string; name: string }[]
   selectedLanguage: string
-  onLanguageChange: (language: string) => void
+  onLanguageChange: (language: string) => void // eslint-disable-line no-unused-vars
 }
 
 const CONTINENTS = [

@@ -125,12 +125,40 @@ Este projeto deve ser utilizado como base para o desenvolvimento do seu teste. A
 
 ## ⭐ Instruções
 
-​
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/plan-frontend-test.git
+   cd plan-frontend-test
+   ```
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+4. Acesse a aplicação em [http://localhost:3000](http://localhost:3000)
+
+Outros comandos disponíveis:
+- `npm run build` — gera a build de produção
+- `npm run start` — inicia o servidor com a build de produção
+- `npm run lint` — executa o ESLint para análise estática do código
+- `npm run format` — aplica correções do ESLint e formatação com Prettier
 
 ## ⭐ Breve explicação
 
-​
+A aplicação foi desenvolvida com **Next.js 15** (App Router) e **TypeScript**, consumindo a [REST Countries API v3.1](https://restcountries.com/). As principais escolhas técnicas foram:
+
+- **SCSS Modules** para estilização com escopo local por componente, evitando conflitos de classes e mantendo os estilos organizados junto aos componentes.
+- **TailwindCSS** como complemento utilitário para espaçamentos e ajustes rápidos.
+- **React Aria Components** para garantir acessibilidade nos componentes interativos (campos de busca, checkboxes, botões), seguindo as diretrizes WAI-ARIA.
+- **Axios** para as requisições HTTP, com um service layer separado (`countryService`) que centraliza todas as chamadas à API.
+- **Custom Hooks** (`useCountries`) para encapsular a lógica de estado, filtros, paginação e chamadas assíncronas, mantendo os componentes de UI limpos e focados na apresentação.
+- **ESLint + Prettier + Husky** configurados para manter a qualidade e padronização do código em todo o projeto.
+
+A aplicação exibe os nomes dos países em português (campo `translations.por`), permite filtragem por nome, continente e idioma (com busca textual no dropdown de idiomas), e possui uma página de detalhes com informações completas de cada país.
 
 ## ⭐ Link do deploy (se houver)
 
-​
+[https://plan-frontend-test.vercel.app/](https://plan-frontend-test.vercel.app/)
